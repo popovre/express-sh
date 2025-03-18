@@ -1,27 +1,48 @@
-# vite-template-redux
+# Решение тестового задания для компании Express-шина
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+---
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
+## Запуск
 
-## Goals
+## В терминале, находясь в корне проекта ввести
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+1. pnpm i
+2. pnpm dev
 
-## Scripts
+---
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+## ТЗ
 
-## Inspiration
+Рекомендуемый стек:
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+JS and TS
+Webpack or Vite or CRA
+SASS or LESS or Styled Components
+Styled Components or CSS Modules (preferred)
+Redux or MobX or Apollo JS Client
+
+Вводные:
+
+Есть API, которое отдаёт структуру каталога: https://express-shina.ru/vacancy/catalog
+
+Это иерархия объектов с описанием категорий и их вложенности друг в друга.
+
+Каждый объект представляет из себя набор следующих свойств:
+
+id - Идентификатор категории
+name - Наименование категории
+slug - Транслитерированное наименование категории (например, для URL)
+index - доступна ли страница для индекса поисковых систем в мета-теге “robots”
+children - массив с вложенными объектами дочерних категорий
+
+Описание задачи:
+
+Результат - это страница со списком ссылок на дочерние категории, отсортированные по наименованию, а также заголовком H1 с наименованием текущей категории.
+
+При переходе по ссылке, дополнительно должна появиться ссылка “Назад”, ведущая на страницу предыдущей категории. Список ссылок на дочерние категории должен обновляться, в зависимости от выбранной категории.
+
+Если дочерних категорий нет (children = null), на месте ссылок ничего не отображается (пустой блок).
+
+При каждом рендере категории, будь то корневой или дочерней, мета-тег “robots” в секции “head” должен менять свое значение на “index” или “noindex” в зависимости от флага, установленного в свойстве “index” данных API.
+
+---
