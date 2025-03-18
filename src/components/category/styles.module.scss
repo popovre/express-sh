@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.name {
+  font-size: var(--asc-low-font);
+}
+
+.children {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}

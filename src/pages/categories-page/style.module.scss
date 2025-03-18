@@ -1,5 +1,18 @@
 .root {
   display: flex;
   flex-direction: column;
+  row-gap: 2rem;
+}
+
+.title {
+  align-self: center;
+  font-size: var(--asc-low-font);
+}
+
+.content {
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
   row-gap: 1rem;
+  border-top: 1px dashed var(--asc-text-info);
 }

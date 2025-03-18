@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.categories {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--asc-border-emphasis);
+}

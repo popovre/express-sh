@@ -3,6 +3,7 @@ import CategoriesPage from "./pages/categories-page/component"
 import ErrorPage from "./pages/error-page/component"
 import Layout from "./layout/component"
 import HomePage from "./pages/home/component"
+import CategoryPage from "./pages/category-page/component"
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,12 @@ const router = createBrowserRouter([
         path: "categories",
         element: <CategoriesPage />,
         errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "*",
+            element: <CategoryPage />,
+          },
+        ],
       },
     ],
   },
