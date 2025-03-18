@@ -1,6 +1,6 @@
 import type { RootState } from "@reduxjs/toolkit/query"
 import { useSelector } from "react-redux"
-import { getCategoriesEntity, getEntityByPath } from "../../redux/categories"
+import { getEntityByPath } from "../../redux/categories"
 import CategoryMemoized from "../../components/category/component"
 import styles from "./style.module.scss"
 import { useLocation } from "react-router-dom"

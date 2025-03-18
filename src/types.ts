@@ -7,7 +7,7 @@ export interface CategoryType {
   slug: string
   name: string
   index: boolean
-  children: CategoriesType | null
+  children?: CategoriesType
 }
 
 export type CategoriesType = CategoryType[]
