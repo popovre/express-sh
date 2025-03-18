@@ -1,13 +1,27 @@
-import { useEffect, useState } from "react"
+// import { getCategories } from "../../redux/categories/thunks/get-categories"
+import { useDispatch, useSelector } from "react-redux"
+import { getLoadingState, getEntities } from "../../redux/categories"
+import { useEffect } from "react"
+import { getCategories } from "../../redux/categories/thunks/get-categories"
 
 const Panel = () => {
-  const [data, setData] = useState<any>()
+  const dispatch = useDispatch()
+  const categories = useSelector(state => getEntities(state))
+  const loadingState = useSelector(state => getLoadingState(state))
+  console.log(categories, "categories")
+
   useEffect(() => {
-    fetch("https://express-shina.ru/vacancy/catalog")
-      .then(res => res.json())
-      .then(data => console.log(data, "data"))
+    dispatch(getCategories())
   }, [])
-  return <div>Panel</div>
+  return (
+    <div>
+      Panel
+      <p>content</p>
+      <div>
+        {loadingState === "pending" ? <div>download</div> : <div>data</div>}
+      </div>
+    </div>
+  )
 }
 
 export default Panel
