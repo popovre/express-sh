@@ -7,7 +7,6 @@ const Breadcrumbs = () => {
 
   const { pathname } = location
 
-  // Получите текущий путь и соответствующие метки
   const pathnames = pathname.split("/").filter(Boolean)
 
   return (
