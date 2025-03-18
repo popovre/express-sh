@@ -7,7 +7,6 @@ import styles from "./styles.module.scss"
 
 const CategoriesNav = () => {
   const data = useSelector((state: RootState) => getCategoriesEntity(state))
-  console.log(data, "categories entity")
   return (
     <div className={styles.root}>
       <h3 className={styles.title}>Категории:</h3>

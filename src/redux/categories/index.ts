@@ -31,7 +31,6 @@ export const categoriesSlice = createSlice({
 
       if (keys.length) {
         const categories = state.entities.categories
-        console.log(categories, "categories")
 
         const category = keys.reduce<CategoryType | CategoriesType | undefined>(
           (acc, key) => {
@@ -46,7 +45,6 @@ export const categoriesSlice = createSlice({
           },
           categories,
         )
-        console.log(category, "category found")
         return category
       }
     },
