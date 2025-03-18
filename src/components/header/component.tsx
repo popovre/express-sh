@@ -5,10 +5,17 @@ const Header = () => {
   return (
     <div className={styles.root}>
       <nav className={styles.nav}>
-        <NavLink className={styles.link} to="/user">
+        <NavLink className={styles.link} to="/">
           {({ isActive }) => (
             <button className={styles.button} disabled={isActive}>
-              User
+              Home
+            </button>
+          )}
+        </NavLink>
+        <NavLink className={styles.link} to="/categories">
+          {({ isActive }) => (
+            <button className={styles.button} disabled={isActive}>
+              Categories
             </button>
           )}
         </NavLink>

@@ -12,9 +12,7 @@ export const categoriesSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(getCategories.fulfilled, (state, { payload }) => {
-      // categoriesAdapter.setAll(state, payload.data)
       state.entities = payload
-      console.log(payload, "payload")
       state.loading = "fulfilled"
     })
     builder.addCase(getCategories.pending, state => {

@@ -1,0 +1,63 @@
+.root {
+  height: 100%;
+  width: 100%;
+}
+
+.centered {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.navlink {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1rem;
+}
+
+.root::after {
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.root::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1.4s linear infinite;
+}
+
+.inSubmit {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.inDropdown {
+  margin: 0;
+  width: 100%;
+  // height: 50%;
+  justify-content: center;
+  align-items: center;
+}
