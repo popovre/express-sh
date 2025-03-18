@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router-dom"
 import styles from "./styles.module.scss"
+import clsx from "clsx"
 
 const Breadcrumbs = () => {
   const location = useLocation()
@@ -26,12 +27,10 @@ const Breadcrumbs = () => {
           const isLast = index === pathnames.length - 1
 
           return (
-            <li
-              key={index}
-              className={`breadcrumb-item ${isLast ? "active" : ""}`}
-              aria-current={isLast ? "page" : undefined}
-            >
-              <Link to={path}>{current}</Link>
+            <li key={index}>
+              <Link to={path} className={clsx({ [styles.active]: isLast })}>
+                {current}
+              </Link>
             </li>
           )
         })}
