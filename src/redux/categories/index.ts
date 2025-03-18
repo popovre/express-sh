@@ -2,8 +2,6 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import { getCategories } from "./thunks/get-categories"
 import type { CategoriesType, CategoryType } from "../../types"
 
-// const categoriesAdapter = createEntityAdapter()
-
 export const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
@@ -33,6 +31,7 @@ export const categoriesSlice = createSlice({
 
       if (keys.length) {
         const categories = state.entities.categories
+        console.log(categories, "categories")
 
         const category = keys.reduce<CategoryType | CategoriesType | undefined>(
           (acc, key) => {
@@ -47,7 +46,6 @@ export const categoriesSlice = createSlice({
           },
           categories,
         )
-
         console.log(category, "category found")
         return category
       }

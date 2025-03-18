@@ -8,8 +8,6 @@ import { useLocation } from "react-router-dom"
 const CategoryPage = () => {
   const location = useLocation()
 
-  console.log(location.pathname, "location")
-
   const category = useSelector((state: RootState) =>
     getEntityByPath(state, {
       payload: location.pathname,

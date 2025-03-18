@@ -13,7 +13,9 @@ const CategoriesNav = () => {
       <h3 className={styles.title}>Категории:</h3>
       <div>
         {data.map((category: CategoryType) => (
-          <Link to={`./${category.slug}`}>{category.name}</Link>
+          <Link key={"key" + category.slug} to={`./${category.slug}`}>
+            {category.name}
+          </Link>
         ))}
       </div>
     </div>
