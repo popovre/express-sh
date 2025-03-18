@@ -12,6 +12,14 @@ const Breadcrumbs = () => {
   return (
     <nav aria-label="breadcrumb" className={styles.root}>
       <h3 className={styles.title}>Breadcrumbs:</h3>
+      {pathnames.length > 1 && (
+        <Link
+          className={styles.backButton}
+          to={`/${pathnames.slice(0, -1).join("/")}`}
+        >
+          Назад
+        </Link>
+      )}
       <ul className={styles.breadscrumbs}>
         {pathnames.map((current, index) => {
           const path = `/${pathnames.slice(0, index + 1).join("/")}`
